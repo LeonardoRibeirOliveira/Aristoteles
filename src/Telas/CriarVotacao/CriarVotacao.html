@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Votação</title>
+    <link rel="stylesheet" href="styleCriarVotacao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="../Imagens/iconeBlockChain2.png" type="image/x-icon"> 
+</head>
+<body>
+    <header>
+        <div class="menu-bar">
+            <div class="menu">
+                <i class="fas fa-bars"></i>
+                <div class="menu-content">
+                    <a href="../Votacoes/Votacoes.html">Visualizar votações que sou eleitor</a>
+                    <a href="../VotacoesAdmin/VotacoesAdmin.html">Visualizar votações que sou Administrador</a>
+                    <a href="../VotacoesCandidato/VotacoesCandidato.html">Visualizar votações que sou Candidato</a>
+                    <a href="../CriarVotacao/CriarVotacao.html">Iniciar Votação</a>
+                </div>
+            </div>
+
+            <div class="user-info">
+                <a href="#" id="logout" class="logout"><i class="fas fa-sign-out-alt"></i> SAIR</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="divTitulo">
+                <h2>Nova Votação</h2>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo">
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Adicionar votantes</label>
+                    <div id="email-container" class="email-container opcoes-list"></div>
+                </div>
+                <div class="form-group">
+                    <label>Candidatos</label>
+                    <div class="opcoes-list" id="opcoes-list">
+                    </div>
+                </div>                                             
+                <div class="form-actions">
+                    <a href="../Votacoes/Votacoes.html">
+                        <button  type="button" class="cancel-btn">Cancelar</button>
+                    </a>
+                    <button type="submit" class="save-btn">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div id="success-popup" class="popup">
+        <div class="popup-content">
+            <p>Cadastro concluído com sucesso!</p>
+            <p>Você será redirecionado em <span id="countdown">3</span> segundos.</p>
+        </div>
+    </div>
+
+    <div id="error-popup" class="popup">
+        <div class="popup-content">
+            <span id="popup-close" class="popup-close">&times;</span>
+            <ul id="error-list"></ul>
+        </div>
+    </div>
+
+    <script src="CriarVotacao.js"></script>
+</body>
+</html>

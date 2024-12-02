@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: voter-api
+    image: voter-api:latest
+    restart: on-failure
+    build:
+      context: ../.
+      dockerfile: ./voter_authentication_api/Dockerfile
+    ports:
+      - "5010:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Local
+    depends_on:
+      - db
+
+  db:
+    container_name: voter-api-mysql
+    image: mysql:5.7
+    hostname: localhost
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: nome_do_banco
+    ports:
+      - "3306:3306"
